@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="./assets/images/1Digit.logo.png" type="image/x-icon">
+  <title>Guess - Game</title>
+</head>
+<body>
+  <main>
+    <div class="container" id="container">
+      <h1 class="int" id="int">Hi, welcome <span class="autoName" id="autoName"></span> !</h1>
+      <h2 class="ort" id="ort">Input your name.</h2>
+      <form action="" class="nameForm" id="nameForm">
+        <div class="nameBox" id="nameBox">
+          <input type="text" name="username" id="username" value="player">
+          <label for="username">Input here your name</label>
+        </div>
+        <div class="levelOptions" id="levelOptions">
+          <h2>Please choose a level.</h2>
+          <div class="begOpt" id="begOpt">
+            <label for="beg" class="option" id="">Continue as Beginner</label>
+            <input type="radio" name="level" id="beg" value="./ingame/beginner/index.html" required>
+          </div>
+          <div class="medOpt" id="medOpt">
+            <label for="med" class="option" id="">Continue as Regular</label>
+            <input type="radio" name="level" id="med" value="./ingame/normal/index.html" required>
+          </div>
+          <div class="proOpt" id="proOpt">
+            <label for="pro" class="option" id="">Continue as Expert</label>
+            <input type="radio" name="level" id="pro" value="./ingame/pro/index.html" required>
+          </div>
+          <button type="submit" class="nameFormSub" id="nameFormSub" onclick="setPlayer()">Aggree and Continue</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+<script src="./assets/js/app.js"></script>
+<script src="./assets/js/app.game.js"></script>
+</html>

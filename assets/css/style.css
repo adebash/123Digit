@@ -1,0 +1,184 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/current/Manrope-VariableFont_wght.ttf');
+  font-style: normal;
+}
+
+:root {
+  --primary: #4ecdc4;   /* turquoise clair */
+  --primary-alt: #4ecdc420;
+  --secondary: #ff6b6b;    /* rouge vif */
+  --secondary-alt: #ff6b6b20;
+  --success: #2ecc71;
+  --success-alt: #2ecc7120;
+  --alert: #ffcc00; /* jaune éclatant */
+  --alert-alt: #ffcc0020;
+  --danger: #ff4757;     /* rouge alerte */
+  --danger-alt: #ff475720;
+  --bg: #f7f7f7;               /* fond clair */
+  --bg-alt: #f7f7f720;
+  --text: #1e272e;          /* noir bleuté */
+  --text-alt: #1e272e20;
+}
+
+* {
+  font-family: 'Manrope', 'Trebuchet MS';
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  outline: none !important;
+  box-sizing: border-box;
+  position: relative;
+  transition: all .2s ease-in-out;
+}
+
+body {
+  font-size: 13px ;
+  height: 100vh;
+  width: 100%;
+}
+
+body main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body main .container {
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 3;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+body main .container::after {
+  content: '';
+  height: calc(100% + 4px);
+  width: calc(100% + 4px);
+  background-image: conic-gradient(from var(--angle), #4ecdc420, #ff475720);
+  animation: spin 5s infinite linear;
+  position: absolute;
+  border-radius: 10px;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+}
+
+body main .container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body main .container form .nameBox {
+  height: 50px;
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+}
+
+body main .container form .nameBox input {
+  height: 50px;
+  width: 100%;
+  text-indent: 1em;
+  border-radius: 10px;
+  border: 1px solid var(--text-alt);
+  background-color: var(--bg-alt);
+  font-weight: bold;
+}
+
+body main .container form .nameBox label {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body main .container form .nameBox input:focus, 
+body main .container form .nameBox input:valid {
+  border: 1px solid var(--text);
+}
+
+body main .container form .nameBox input:focus~label,
+body main .container form .nameBox input:valid~label {
+  top: 1em;
+  font-size: .7em;
+}
+
+
+.levelOptions {
+  border-radius: 10px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--text-alt);
+}
+
+.levelOptions>div {
+  border-radius: 10px;
+  height: 60px;
+  width: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 30px;
+}
+
+.levelOptions>* label {
+  background-color: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  padding-left: 30px;
+  border-radius: 10px;
+  border: 2px solid var(--text-alt);
+}
+
+.levelOptions>* label:hover,
+button:hover {
+  opacity: .7;
+}
+
+#active {
+  background-color: var(--primary-alt) !important;
+  border: 2px solid var(--primary) !important;
+  font-weight: bold;
+}
+
+.nameFormSub {
+  height: 40px;
+  width: 200px;
+  background-color: var(--success-alt);
+  border: 1px solid var(--success);
+  border-radius: 5px;
+}
+
+.nameFormSub:hover {
+  opacity: .7;
+}

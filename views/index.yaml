@@ -1,0 +1,27 @@
+┌─────────────────────────────┐
+│        🎮 NumberGuess       │   ← Titre du jeu
+├─────────────────────────────┤
+│ 👤 Nom du joueur : Bruno     │
+│ 🎯 Niveau : Medium           │
+│ ❤️ Chances restantes : 5     │   ← (petits cœurs affichés ici)
+├─────────────────────────────┤
+│ 🔢 Devine le nombre !        │
+│ [  ...input number...  ]     │   ← Input de devinette
+│                             │
+│ [ VÉRIFIER ]                 │   ← Bouton de soumission
+├─────────────────────────────┤
+│ 📢 Indication : C’est plus ! │   ← Message d’aide (plus ou moins)
+└─────────────────────────────┘
+
+
+const boxes = document.querySelectorAll('.box');
+
+boxes.forEach(box => {
+  box.addEventListener('click', () => {
+    // Supprimer l'id="active" ou la classe active des autres
+    boxes.forEach(b => b.removeAttribute('id'));
+    
+    // Ajouter l'attribut id="active" à l'élément cliqué
+    box.setAttribute('id', 'active');
+  });
+});

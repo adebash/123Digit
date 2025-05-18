@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="shortcut icon" href="../../assets/images/1Digit.logo.png" type="image/x-icon">
+  <title>Intermadiate - Game</title>
+</head>
+<body>
+  <div class="difficultiesBox" id="difficultiesBox">
+    <h1>Great, <span class="isPlayer" id="isPlayer"></span>.</h1>
+    <h2>Let choose a difficulty.</h2>
+    <div class="difficultiesContent" id="difficultiesContent">
+      <div class="easyBox" id="easyBox">
+        <label for="easy" class="dBox" id="">Easy - (10 Tries)</label>
+        <input type="radio" name="difficulty" id="easy" value="easy" required>
+      </div>
+      <div class="normalBox" id="normalBox">
+        <label for="normal" class="dBox" id="">Normal - (5 Tries)</label>
+        <input type="radio" name="difficulty" id="normal" value="normal" required>
+      </div>
+      <div class="hardBox" id="hardBox">
+        <label for="hard" class="dBox" id="">Hard - (3 Tries)</label>
+        <input type="radio" name="difficulty" id="hard" value="hard" required>
+      </div>
+    </div>
+    <button type="button" class="subDifficulty" id="subDifficulty">Continue with <span class="flowDifficulty" id="flowDifficulty"></span></button>
+  </div>
+  <main class="main" id="main">
+    <div class="gameContainer" id="gameContainer">
+      <div class="gameName" id="gameName">
+        <h1 class="gameNameText" id="gameNameText">123Digit</h1>
+      </div>
+      <div class="userInfos" id="userInfos">
+        <span>👤 Player name: 
+          <strong>
+            <span class="callPlayer2nd" id="callPlayer2nd"></span>
+          </strong>
+        </span>
+        <br>
+        <span>🎯 Level: <strong><span class="indexDifficulty" id="indexDifficulty">Medium</span> (Between 0 & 20)</strong></span>
+        <br>
+        <span>☠ Difficulty: 
+          <strong>
+            <span class="callDifficulty" id="callDifficulty"></span>
+          </strong>
+        </span>
+        <br>
+        <span>❤️ Lives remaining:
+          <strong>
+            <span class="isRemainingLife" id="isRemainingLife"></span>
+            Tries
+          </strong>
+        </span>
+      </div>
+      <div class="inGame" id="inGame">
+        <h3>Let play !</h3>
+        <p>Guess the right number:</p>
+        <div class="gameFocus" id="gameFocus">
+          <input type="text" name="guesInput" id="guessInput" required>
+        </div>
+        <button type="button" class="inputChecker" id="inputChecker">Check</button>
+      </div>
+      <div class="helpLog" id="helpLog">
+        <span class="helper" id="helper">All logs will appear here.</span>
+      </div>
+      <div class="restartPart" id="restartPart">
+        <span class="countdownMessage" id="countdownMessage">Restart countdown. . .</span>
+        <button type="button" class="restartNow" id="restartNow">Restart now</button>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="../assets/js/app.game.js"></script>
+</html>

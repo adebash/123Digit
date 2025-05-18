@@ -1,0 +1,258 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('../../../assets/fonts/current/Manrope-VariableFont_wght.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hanelei';
+  src: url('../../../assets/fonts/Hanalei/Hanalei-Regular.ttf');
+  font-style: normal;
+}
+
+:root {
+  --primary: #4ecdc4;   /* turquoise clair */
+  --primary-alt: #4ecdc420;
+  --secondary: #ff6b6b;    /* rouge vif */
+  --secondary-alt: #ff6b6b20;
+  --success: #2ecc71;
+  --success-alt: #2ecc7120;
+  --alert: #ffcc00; /* jaune éclatant */
+  --alert-alt: #ffcc0020;
+  --danger: #ff4757;     /* rouge alerte */
+  --danger-alt: #ff475720;
+  --bg: #f7f7f7;               /* fond clair */
+  --bg-alt: #f7f7f720;
+  --text: #1e272e;          /* noir bleuté */
+  --text-alt: #1e272e20;
+}
+
+* {
+  font-family: 'Manrope', 'Trebuchet MS';
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  outline: none !important;
+  box-sizing: border-box !important;
+  position: relative;
+  transition: all .2s ease-in-out;
+}
+
+body {
+  font-size: 13px ;
+  height: 100vh;
+  width: 100%;
+}
+
+body main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body main .gameContainer {
+  width: 360px;
+  border: 1px solid var(--alert);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+body main .gameContainer>* {
+  width: 90%;
+}
+
+body main .gameContainer .gameName {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body main .gameContainer .userInfos {
+  background-color: var(--primary-alt);
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+body main .gameContainer .userInfos>span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 25px;
+}
+
+body main .gameContainer .inGame {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+body main .gameContainer .inGame .gameFocus {
+  height: 50px;
+  width: 100%;
+}
+
+body main .gameContainer .inGame .gameFocus input {
+  height: 100%;
+  width: 100%;
+  text-indent: 1em;
+  border-radius: 10px;
+  border: 1px solid var(--text-alt);
+  font-weight: bold;
+}
+
+body main .gameContainer .inGame .gameFocus label {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body main .gameContainer .inGame .gameFocus input:focus, 
+body main .gameContainer .inGame .gameFocus input:valid {
+  border: 1px solid var(--text);
+}
+
+body main .gameContainer .inGame .gameFocus input:focus~label,
+body main .gameContainer .inGame .gameFocus input:valid~label {
+  top: 1em;
+  font-size: .7em;
+}
+
+body main .gameContainer .inGame>button {
+  height: 40px;
+  margin-bottom: 10px;
+  background-color: var(--success-alt);
+  border: 1px solid var(--success);
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+body main .gameContainer .helpLog {
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--alert-alt);
+  border: 1px solid var(--alert);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body main .gameContainer .restartPart {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body main .gameContainer .restartPart .countdownMessage {
+  color: var(--danger);
+  font-weight: bold;
+}
+
+body main .gameContainer .restartPart .restartNow {
+  height: 40px;
+  padding: 0 5px;
+  background-color: var(--danger-alt);
+  border: 1px solid var(--danger);
+  border-radius: 10px;
+}
+
+.difficultiesBox {
+  background-color: var(--bg-alt);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.gameNameText {
+  font-family: 'Hanelei';
+  background: linear-gradient(to right, #4ecdc4, #ff4757);
+  display: inline;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.difficultiesContent {
+  border-radius: 10px;
+  width: 280px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.difficultiesContent>* {
+  border-radius: 10px;
+  height: 80px;
+  width: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 30px;
+}
+
+.difficultiesContent>* label {
+  background-color: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  padding-left: 30px;
+  border-radius: 10px;
+  border: 2px solid var(--text-alt);
+}
+
+.difficultiesContent>* label:hover,
+button:hover {
+  opacity: .7;
+}
+
+#active {
+  background-color: var(--primary-alt) !important;
+  border: 2px solid var(--primary) !important;
+  font-weight: bold;
+}
+
+.subDifficulty {
+  height: 40px;
+  width: 200px;
+  background-color: var(--success-alt);
+  border: 1px solid var(--success);
+  border-radius: 5px;
+}
+
+.subDifficulty:hover {
+  opacity: .7;
+}
+
+@media screen and (max-width: 425px) {
+  body main .gameContainer {
+    max-width: 100%;
+    border-color: red;
+  }
+}
